@@ -130,3 +130,37 @@ for(let i = 0; i < navigationLinks.length; i++) {
         }
     });
 }
+
+
+
+(function() {
+    emailjs.init("_8ajn1M79rJhcQeF-"); // ضع مفتاح EmailJS العام هنا
+  })();
+
+  document.querySelector(".form").addEventListener("submit", function(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+    
+    // جمع بيانات النموذج
+    let formData = {
+      fullname: document.getElementById("fullname").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    };
+
+    let sendButton = document.querySelector(".form-btn");
+    sendButton.disabled = true;
+    sendButton.innerHTML = "Sending...";
+
+    emailjs.send("service_naysg7q", "template_9p22r8g", formData)
+      .then(function(response) {
+        alert("تم إرسال الرسالة بنجاح! ✅");
+        sendButton.innerHTML = "Send Message";
+        sendButton.disabled = false;
+        document.querySelector(".form").reset(); // تفريغ الحقول بعد الإرسال
+      })
+      .catch(function(error) {
+        alert("❌ فشل في إرسال الرسالة! \n الخطأ: " + error.text);
+        sendButton.innerHTML = "Send Message";
+        sendButton.disabled = false;
+      });
+  });

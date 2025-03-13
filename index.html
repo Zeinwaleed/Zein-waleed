@@ -664,11 +664,11 @@
 
                     <form action="#" class="form" data-form>
                         <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
+                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input id="fullname">
+                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input id="email">
                         </div>
 
-                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input=""></textarea>
+                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input="" id="message"></textarea>
 
                         <button class="form-btn" type="submit" disabled data-form-btn>
                             <ion-icon name="paper-plane"></ion-icon>
@@ -679,7 +679,7 @@
             </article>
         </div>
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="main.js"></script>
     <script src="http://galt.works/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
