@@ -153,13 +153,13 @@ for(let i = 0; i < navigationLinks.length; i++) {
 
     emailjs.send("service_naysg7q", "template_9p22r8g", formData)
       .then(function(response) {
-        alert("تم إرسال الرسالة بنجاح! ✅");
+        alert("Your message is sent ✅");
         sendButton.innerHTML = "Send Message";
         sendButton.disabled = false;
         document.querySelector(".form").reset(); // تفريغ الحقول بعد الإرسال
       })
       .catch(function(error) {
-        alert("❌ فشل في إرسال الرسالة! \n الخطأ: " + error.text);
+        alert("He didn't receive your message❌" + error.text);
         sendButton.innerHTML = "Send Message";
         sendButton.disabled = false;
       });
